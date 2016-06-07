@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>D9 4.2 Handlebars</title>
+    <link rel="stylesheet" href="css/app.css">
+    <script type="text/javascript" href="scripts/index.js"></script>
+  </head>
+  <body>
+
+    <div class="container">
+      <!-- <div class="row header">
+        <div class="col-md-12"><h1>D9 Albums :: 10</h1></div>
+      </div>
+      <div class="row photo-catalog">
+        <div class="col-md-4">
+          <div class="photo-container">
+            <a href="" class="album-title">
+              <img src="http://unsplash.it/120/140" alt="photo title">
+              <div>Album Title</div>
+            </a>
+            <ul>
+              <li>Photo #1</li>
+              <li>Photo #2</li>
+              <li>Photo #3</li>
+            </ul>
+          </div>
+        </div>
+      </div> -->
+    </div>
+
+    <script id="header-template" type="text/x-handlebars-template">
+      <div class="row header">
+        <div class="col-md-12">
+          <h1>D9 Albums :: {{count}}</h1>
+        </div>
+      </div>
+    </script>
+
+    <script id="album-tile" type="text/x-handlebars-template">
+      {{#each albums}}
+      <div class="col-md-4">
+        <div class="container">
+          <a href="#" class="album-title">
+            <img src="{{thumb}}" alt="{{thumb.title}}"/>
+            <div>{{title}}</div>
+          </a>
+          <ul>
+            {{#each photos}}
+            <li>{{title}}</li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+      {{/each}}
+    </script>
+
+    <script src="js/bundle.js"></script>
+  </body>
+</html>
